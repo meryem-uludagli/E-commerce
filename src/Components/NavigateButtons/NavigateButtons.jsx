@@ -26,16 +26,23 @@ const NavigateButtons = () => {
           return (
             <div key={index} className="mr-4">
               <Link to={"/filteredProducts/" + button}>
-                <Button
-                  color="gray"
+                <button
                   size="lg"
                   variant="outlined"
                   ripple={true}
-                  className="text-black hover:bg-gray-300 duration-300 ease-in-out"
+                  className="
+                   btn 
+                   text-white bg-green-500 border-green-500 
+                   hover:bg-green-600 hover:border-green-600 
+                   active:bg-green-700 
+                   focus:ring-2 focus:ring-green-300 
+                   duration-300 ease-in-out
+                   px-4 py-2 rounded-lg shadow-md
+                 "
                   onClick={() => dispatch(filterProducts(button))}
                 >
                   {button}
-                </Button>
+                </button>
               </Link>
             </div>
           );

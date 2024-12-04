@@ -1,4 +1,4 @@
-import { createSlice, configureStore } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { sliderData } from "../../assets/data/dummyData";
 
 export const sliderSlice = createSlice({
