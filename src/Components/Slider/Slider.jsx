@@ -9,7 +9,6 @@ import { sliderData } from "../../assets/data/dummyData";
 
 const Slider = () => {
   const slideIndex = useSelector((state) => state.slider.value);
-  console.log("slideIndex", slideIndex);
   const dispatch = useDispatch();
 
   return (
@@ -28,14 +27,14 @@ const Slider = () => {
               <div>
                 {parseInt(item.id) === slideIndex && (
                   <img
-                    className="h-[740px] w-full object-cover"
+                    className="h-[850px] w-full"
                     src={item.img}
                     alt="shoes"
-                  />
+                  ></img>
                 )}
               </div>
               <div className="absolute top-44 mx-auto inset-x-1/4">
-                <p className="text-white text-4xl font-inter font-bold">
+                <p className="text-white text-4xl font-inter font-bold tracking-normal leading-none">
                   {parseInt(item.id) === slideIndex && item.text}
                 </p>
               </div>
@@ -43,16 +42,15 @@ const Slider = () => {
           );
         })}
       </div>
-
-      <div className="flex absolute bottom-12 left-[45%]">
+      <div className="flex absolute bottom-12  left-[45%]">
         {sliderData.map((dot, index) => {
           return (
             <div className="mr-4" key={dot.id}>
               <div
                 className={
                   index === slideIndex
-                    ? "bg-green-300 rounded-full p-4 cursor-pointer"
-                    : "bg-white rounded-full p-4 cursor-pointer"
+                    ? "bg-green-300 rounded-full p-2 cursor-pointer"
+                    : "bg-white rounded-full p-2 cursor-pointer"
                 }
                 onClick={() => dispatch(dotSlide(index))}
               ></div>
